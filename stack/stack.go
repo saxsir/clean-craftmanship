@@ -20,4 +20,7 @@ func (s *Stack) push(_element int) {
 	s.empty = false
 }
 
+func (s *Stack) pop() int {
+	s.empty = true
+	return -1
 }
