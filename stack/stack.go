@@ -1,30 +1,31 @@
 package stack
 
 type Stack struct {
-	empty bool
+	size int
 }
 
 func NewStack() *Stack {
 	return &Stack{
-		empty: true,
+		size: 0,
 	}
 }
 
 var s = NewStack()
 
 func (s *Stack) isEmpty() bool {
-	return s.empty
+	return s.size == 0
 }
 
 func (s *Stack) push(_element int) {
-	s.empty = false
+	s.size += 1
 }
 
 func (s *Stack) pop() int {
-	s.empty = true
+	s.size -= 1
 	return -1
+
 }
 
 func (s *Stack) getSize() int {
-	return 2
+	return s.size
 }

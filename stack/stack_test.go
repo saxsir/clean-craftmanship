@@ -19,6 +19,9 @@ func Test_afterOnePush_isNotEmpty(t *testing.T) {
 	if want != got {
 		t.Errorf("want %v, but got %v", want, got)
 	}
+	if got := s.getSize(); 1 != got {
+		t.Errorf("want %v, but got %v", 1, got)
+	}
 }
 
 func Test_afterOnePushAndOnePop_isEmpty(t *testing.T) {
@@ -29,6 +32,10 @@ func Test_afterOnePushAndOnePop_isEmpty(t *testing.T) {
 	got := s.isEmpty()
 	if want != got {
 		t.Errorf("want %v, but got %v", want, got)
+	}
+
+	if got := s.getSize(); 0 != got {
+		t.Errorf("want %v, but got %v", 1, got)
 	}
 }
 
